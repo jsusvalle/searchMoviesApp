@@ -1,0 +1,80 @@
+header.header {
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mq-tablet {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .logo h1 {
+        margin: 0;
+        font-size: 4rem;
+    }
+    .search-movie {
+        order: 3;
+        @include mq-tablet {
+            order: 2;
+        }
+    }
+    .favs-out {
+        order: 2;
+        margin-top: 2rem;
+        font-size: 2.5rem;
+        @include mq-tablet {
+            order: 3;
+            margin-top: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .btn-fav {
+            //display: none;
+            &:hover i {
+                transition: color .5s ease;
+                color: $primary-color;
+            }
+        }
+        .btn-out {
+            margin-left: 5rem;
+            transition: color .5s ease;
+            @include mq-tablet {
+                margin-left: 2rem;
+            }
+            @include mq-desktop {
+                margin-left: 5rem;
+            }
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+    .search-movie {
+        margin-top: 2rem;
+        @include mq-tablet {
+            margin-top: 0;
+        }
+        form {
+            display: flex;
+            input {
+                padding: 1rem;
+                border: none;
+                border-top-left-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                border-right: 2px solid $primary-color;
+            }
+            button {
+                border: none;
+                border-top-right-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                background-color: #ffffff;
+                cursor: pointer;
+                i {
+                    font-size: 2rem;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}

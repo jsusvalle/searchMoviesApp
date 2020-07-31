@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #1c2230;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+h1 span {
+  color: #ed3355;
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+}
+div.container .form-login {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+div.container .form-login input {
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+div.container .form-login input.name-user,
+div.container .form-login input.pass-user {
+  border: 2px solid #ed3355;
+  background-color: #1c22309b;
+}
+div.container .form-login .login {
+  border: none;
+  background-color: #ed3355;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}
+div.container .form-login .login:hover {
+  background-color: #ed3355b0;
+}
+
+header.header {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  header.header {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+header.header .logo h1 {
+  margin: 0;
+  font-size: 4rem;
+}
+header.header .search-movie {
+  order: 3;
+}
+@media only screen and (min-width: 768px) {
+  header.header .search-movie {
+    order: 2;
+  }
+}
+header.header .favs-out {
+  order: 2;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+}
+@media only screen and (min-width: 768px) {
+  header.header .favs-out {
+    order: 3;
+    margin-top: 0;
+  }
+}
+header.header .favs-out a {
+  text-decoration: none;
+  color: #ffffff;
+}
+header.header .favs-out .btn-fav:hover i {
+  transition: color 0.5s ease;
+  color: #ed3355;
+}
+header.header .favs-out .btn-out {
+  margin-left: 5rem;
+  transition: color 0.5s ease;
+}
+@media only screen and (min-width: 768px) {
+  header.header .favs-out .btn-out {
+    margin-left: 2rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  header.header .favs-out .btn-out {
+    margin-left: 5rem;
+  }
+}
+header.header .favs-out .btn-out:hover {
+  color: #ed3355;
+}
+header.header .search-movie {
+  margin-top: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  header.header .search-movie {
+    margin-top: 0;
+  }
+}
+header.header .search-movie form {
+  display: flex;
+}
+header.header .search-movie form input {
+  padding: 1rem;
+  border: none;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-right: 2px solid #ed3355;
+}
+header.header .search-movie form button {
+  border: none;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+header.header .search-movie form button i {
+  font-size: 2rem;
+  color: #ed3355;
+}
+
+div.response-search {
+  margin: 3rem 0;
+  text-align: center;
+  font-size: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  div.response-search {
+    font-size: 3rem;
+  }
+}
+
+div.container-movies {
+  display: grid;
+  justify-content: center;
+  grid-row-gap: 3rem;
+  grid-column-gap: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  div.container-movies {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+}
+@media only screen and (min-width: 992px) {
+  div.container-movies {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (min-width: 1320px) {
+  div.container-movies {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+div.container-movies .movie {
+  padding: 1rem;
+  border-radius: 1.5rem;
+  transition: background-color 1s ease;
+}
+div.container-movies .movie:hover {
+  background-color: #ffffff28;
+}
+div.container-movies .movie .img-movie img {
+  width: 170px;
+  border-radius: 1.5rem;
+}
+div.container-movies .movie .text {
+  text-align: center;
+}
+div.container-movies .movie .text .title {
+  font-weight: 700;
+}
+div.container-movies .movie .text .year .type {
+  padding: 3px;
+  background-color: #ed3355;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

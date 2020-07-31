@@ -1,0 +1,52 @@
+div.response-search {
+    margin: 3rem 0;
+    text-align: center;
+    font-size: 2rem;
+    @include mq-tablet {
+        font-size: 3rem;
+    }
+}
+
+div.container-movies {
+    //width: 95%;
+    //  margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    grid-row-gap: 3rem;
+    grid-column-gap: 2rem;
+    @include mq-tablet {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+    @include mq-desktop {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @include mq-desktop-large {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .movie {
+        padding: 1rem;
+        border-radius: 1.5rem;
+        transition: background-color 1s ease;
+        &:hover {
+            background-color: #ffffff28;
+        }
+        .img-movie img {
+            width: 170px;
+            border-radius: 1.5rem;
+        }
+        .text {
+            text-align: center;
+            .title {
+                font-weight: 700;
+            }
+            .year {
+                .type {
+                    padding: 3px;
+                    background-color: $primary-color;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}

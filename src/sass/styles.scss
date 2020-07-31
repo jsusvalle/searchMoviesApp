@@ -1,0 +1,66 @@
+//* Variables
+$primary-color: #ed3355;
+//
+//* Media Querys
+@mixin mq-mobile {
+    @media only screen and (min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin mq-tablet {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mq-desktop {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin mq-desktop-large {
+    @media only screen and (min-width: 1320px) {
+        @content;
+    }
+}
+
+//* Container
+@mixin container($width, $my:0, $mx:auto) {
+    width: $width;
+    margin: $my $mx;
+}
+
+//HTML
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: #1c2230;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+//* Globals
+h1 {
+    text-transform: uppercase;
+    span {
+        color: $primary-color;
+    }
+}
+
+//! Imports
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "login";
+@import "header";
+@import "container-movies";
