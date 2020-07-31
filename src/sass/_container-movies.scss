@@ -31,9 +31,30 @@ div.container-movies {
         &:hover {
             background-color: #ffffff28;
         }
-        .img-movie img {
-            width: 170px;
-            border-radius: 1.5rem;
+        &:hover {
+            .img-movie .view-more {
+                display: initial;
+            }
+        }
+        .img-movie {
+            position: relative;
+            img {
+                width: 170px;
+                border-radius: 1.5rem;
+            }
+            .view-more {
+                display: none;
+                position: absolute;
+                top: 120px;
+                left: 55px;
+                border: none;
+                cursor: pointer;
+                background: transparent;
+                i {
+                    color: $primary-color;
+                    font-size: 4rem;
+                }
+            }
         }
         .text {
             text-align: center;
