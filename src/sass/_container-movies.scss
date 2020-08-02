@@ -28,6 +28,10 @@ div.container-movies {
         padding: 1rem;
         border-radius: 1.5rem;
         transition: background-color 1s ease;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         &:hover {
             background-color: #ffffff28;
         }
@@ -57,9 +61,12 @@ div.container-movies {
             }
         }
         .text {
-            text-align: center;
             .title {
-                font-weight: 700;
+                width: 15rem;
+                p {
+                    font-weight: 700;
+                    margin: .5rem;
+                }
             }
             .year {
                 .type {

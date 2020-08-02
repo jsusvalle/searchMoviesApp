@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info Movies Application</title>
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="static/css/normalize.css">
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
@@ -18,8 +19,7 @@
         <div class="search-movie">
             <form action="#" id="submit">
                 <input type="text" id="search" placeholder="Search movie">
-                <button class="search-btn" type="submit">
-                    <i class="fas fa-search"></i>
+                <button class="search-btn" type="submit" id="btn-search"><i class="fas fa-search"></i>
                 </button>
             </form>
         </div>
@@ -31,166 +31,16 @@
         </div>
     </header>
 
-    <div class="response-search">
-        <p>There are results of "Batman"</p>
+    <div class="response-search" id="message-search"></div>
+    <div class="container-movies" id="movies-container">
     </div>
-    <div class="container-movies">
-        <div class="movie">
-            <div class="img-movie">
-                <img src="assets/movie.jpg" alt="">
-                <button class="view-more" id="view-more">
-                    <i class="fas fa-eye"></i>
-                </button>
-            </div>
-            <div class="text">
-                <p class="title">Killing Joker</p>
-                <p class="year">1985 - <span class="type">Movie</span> </p>
-            </div>
-            <div class="info-modal" id="info-modal">
-                <div class="modal-content">
-                    <div class="close">
-                        <p class="title">Batman: The Killing Joke</p>
-                        <button id="close-info"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="info-movie">
-                        <img src="assets/movie.jpg" alt="">
 
-                        <p class="genre">Animation, Action, Crime, Drama, Thriller</p>
-                        <div class="icons-bar">
-                            <p><i class="fas fa-clock"></i> 76 min</p>
-                            <p><i class="fas fa-comments"></i> English</p>
-                            <p class="imdbRating"><i class="fab fa-imdb"></i> 6.4</p>
-                        </div>
-                        <div class="info-create-movie">
-                            <p><span>Director: </span>Sam Liu</p>
-                            <p><span>Actors: </span>Kevin Conroy, Mark Hamill, Tara Strong, Ray Wise</p>
-                            <p><span>Writers: </span>Brian Azzarello, Brian Bolland (based on the graphic novel illustrated by), Bob Kane (Batman created by), Bill Finger (Batman created by)</p>
-                            <p><span>About: </span> As Batman hunts for the escaped Joker, the Clown Prince of Crime attacks the Gordon family to prove a diabolical point mirroring his own fall into madness.</p>
-                        </div>
-                        <button class="favourite">Add to favourite <i class="fas fa-heart"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="movie">
-            <div class="img-movie">
-                <img src="assets/movie.jpg" alt="">
-                <button class="view-more" id="view-more">
-                    <i class="fas fa-eye"></i>
-                </button>
-            </div>
-            <div class="text">
-                <p class="title">Killing Joker</p>
-                <p class="year">1985 - <span class="type">Movie</span> </p>
-            </div>
-            <div class="info-modal" id="info-modal">
-                <div class="modal-content">
-                    <div class="close">
-                        <p class="title">Batman: The Killing Joke</p>
-                        <button id="close-info"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="info-movie">
-                        <img src="assets/movie.jpg" alt="">
-
-                        <p class="genre">Animation, Action, Crime, Drama, Thriller</p>
-                        <div class="icons-bar">
-                            <p><i class="fas fa-clock"></i> 76 min</p>
-                            <p><i class="fas fa-comments"></i> English</p>
-                            <p class="imdbRating"><i class="fab fa-imdb"></i> 6.4</p>
-                        </div>
-                        <div class="info-create-movie">
-                            <p><span>Director: </span>Sam Liu</p>
-                            <p><span>Actors: </span>Kevin Conroy, Mark Hamill, Tara Strong, Ray Wise</p>
-                            <p><span>Writers: </span>Brian Azzarello, Brian Bolland (based on the graphic novel illustrated by), Bob Kane (Batman created by), Bill Finger (Batman created by)</p>
-                            <p><span>About: </span> As Batman hunts for the escaped Joker, the Clown Prince of Crime attacks the Gordon family to prove a diabolical point mirroring his own fall into madness.</p>
-                        </div>
-                        <button class="favourite">Add to favourite <i class="fas fa-heart"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="movie">
-            <div class="img-movie">
-                <img src="assets/movie.jpg" alt="">
-                <button class="view-more" id="view-more">
-                    <i class="fas fa-eye"></i>
-                </button>
-            </div>
-            <div class="text">
-                <p class="title">Killing Joker</p>
-                <p class="year">1985 - <span class="type">Movie</span> </p>
-            </div>
-            <div class="info-modal" id="info-modal">
-                <div class="modal-content">
-                    <div class="close">
-                        <p class="title">Batman: The Killing Joke</p>
-                        <button id="close-info"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="info-movie">
-                        <img src="assets/movie.jpg" alt="">
-
-                        <p class="genre">Animation, Action, Crime, Drama, Thriller</p>
-                        <div class="icons-bar">
-                            <p><i class="fas fa-clock"></i> 76 min</p>
-                            <p><i class="fas fa-comments"></i> English</p>
-                            <p class="imdbRating"><i class="fab fa-imdb"></i> 6.4</p>
-                        </div>
-                        <div class="info-create-movie">
-                            <p><span>Director: </span>Sam Liu</p>
-                            <p><span>Actors: </span>Kevin Conroy, Mark Hamill, Tara Strong, Ray Wise</p>
-                            <p><span>Writers: </span>Brian Azzarello, Brian Bolland (based on the graphic novel illustrated by), Bob Kane (Batman created by), Bill Finger (Batman created by)</p>
-                            <p><span>About: </span> As Batman hunts for the escaped Joker, the Clown Prince of Crime attacks the Gordon family to prove a diabolical point mirroring his own fall into madness.</p>
-                        </div>
-                        <button class="favourite">Add to favourite <i class="fas fa-heart"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="movie">
-            <div class="img-movie">
-                <img src="assets/movie.jpg" alt="">
-                <button class="view-more" id="view-more">
-                    <i class="fas fa-eye"></i>
-                </button>
-            </div>
-            <div class="text">
-                <p class="title">Killing Joker</p>
-                <p class="year">1985 - <span class="type">Movie</span> </p>
-            </div>
-            <div class="info-modal" id="info-modal">
-                <div class="modal-content">
-                    <div class="close">
-                        <p class="title">Batman: The Killing Joke</p>
-                        <button id="close-info"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="info-movie">
-                        <img src="assets/movie.jpg" alt="">
-
-                        <p class="genre">Animation, Action, Crime, Drama, Thriller</p>
-                        <div class="icons-bar">
-                            <p><i class="fas fa-clock"></i> 76 min</p>
-                            <p><i class="fas fa-comments"></i> English</p>
-                            <p class="imdbRating"><i class="fab fa-imdb"></i> 6.4</p>
-                        </div>
-                        <div class="info-create-movie">
-                            <p><span>Director: </span>Sam Liu</p>
-                            <p><span>Actors: </span>Kevin Conroy, Mark Hamill, Tara Strong, Ray Wise</p>
-                            <p><span>Writers: </span>Brian Azzarello, Brian Bolland (based on the graphic novel illustrated by), Bob Kane (Batman created by), Bill Finger (Batman created by)</p>
-                            <p><span>About: </span> As Batman hunts for the escaped Joker, the Clown Prince of Crime attacks the Gordon family to prove a diabolical point mirroring his own fall into madness.</p>
-                        </div>
-                        <button class="favourite">Add to favourite <i class="fas fa-heart"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="info-modal" id="info-modal">
 
     </div>
 
 
-    <script src="static/js/main.js"></script>
+    <script src="static/js/main.js" type="module"></script>
     <script src="https://kit.fontawesome.com/55a889473b.js" crossorigin="anonymous"></script>
 </body>
 

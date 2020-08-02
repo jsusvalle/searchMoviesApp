@@ -10,7 +10,13 @@ div.container {
         flex-direction: column;
         padding: 2rem;
         border-radius: 1rem;
-        input {
+        .message-login {
+            text-align: center;
+            background-color: #6e1a29;
+            border-radius: 1rem;
+        }
+        input,
+        button {
             color: #ffffff;
             border-radius: 1rem;
             padding: 1rem;

@@ -47,6 +47,16 @@
         .info-movie {
             margin-top: 2rem;
             text-align: center;
+            font-size: 1.2rem;
+            @include mq-tablet {
+                font-size: 1.3rem;
+            }
+            @include mq-desktop {
+                font-size: 1.4rem;
+            }
+            @include mq-desktop-large {
+                font-size: 1.6rem;
+            }
             img {
                 width: 100px;
                 @include mq-tablet {
