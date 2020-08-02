@@ -36,19 +36,6 @@ header.header {
                 color: $primary-color;
             }
         }
-        .btn-out {
-            margin-left: 5rem;
-            transition: color .5s ease;
-            @include mq-tablet {
-                margin-left: 2rem;
-            }
-            @include mq-desktop {
-                margin-left: 5rem;
-            }
-            &:hover {
-                color: $primary-color;
-            }
-        }
     }
     .search-movie {
         margin-top: 2rem;
@@ -58,6 +45,7 @@ header.header {
         form {
             display: flex;
             input {
+                width: 30rem;
                 padding: 1rem;
                 border: none;
                 border-top-left-radius: 1rem;

@@ -12,18 +12,18 @@
     transition: transform .5s ease-in-out;
     .modal-content {
         background-color: #1c2230;
-        width: 80vw;
+        width: 90vw;
         height: auto;
         padding: 1rem;
         border-radius: 1rem;
         @include mq-tablet {
-            width: 60vw;
+            width: 70vw;
         }
         @include mq-desktop {
-            width: 50vw;
+            width: 60vw;
         }
         @include mq-desktop-large {
-            width: 40vw;
+            width: 60vw;
         }
         .close {
             display: flex;

@@ -1,15 +1,74 @@
-// import { userExist } from "./init.js";
+//TODO IMPORTS
+import { checkLS, addToLocalstorage } from "./localStorage.js";
 
+//* GLOBALS VARIABLES 
 const btnSearch = document.getElementById('btn-search');
 const containerMovies = document.getElementById('movies-container');
 const modal = document.getElementById('info-modal');
-
-// document.addEventListener('DOMContentLoaded', userExist);
+const numberFav = document.getElementById('number-fav');
 
 //* Functions
-function closeModal(e) {
-    if (e.target.classList.contains('close-button')) {
-        modal.classList.remove("show");
+//* CHECK THE LOCALSTORAGE
+function checkLocalStorage() {
+    let resultLS;
+    resultLS = checkLS();
+    numberFav.innerText = resultLS.length;
+}
+
+//* RESULTS OF SEARCH MOVIES
+function chargeMovies(e) {
+    e.preventDefault();
+    const textSearch = document.getElementById('search').value;
+    consultApi(textSearch);
+}
+
+async function consultApi(title) {
+    const response = await fetch(`//www.omdbapi.com/?s=${title}&apikey=1e13fde`);
+    const resultsSearch = await response.json();
+    if (resultsSearch.Response === "True") {
+        renderResults(resultsSearch.Search);
+        renderMessage("These are the results of", title);
+    } else {
+        containerMovies.innerHTML = "";
+        renderMessage(":( There are no results for", title);
+    }
+}
+
+function renderMessage(message, title) {
+    const divMessage = document.getElementById('message-search');
+    divMessage.innerHTML = `<p> ${message} "${title}"</p>`;
+}
+
+function renderResults(results) {
+    containerMovies.innerHTML = results.map(movie =>
+        `<div class="movie">
+            <div class="img-movie">
+                <img src="${movie.Poster}" alt="">
+                <button class="view-more" id="${movie.imdbID}">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+            <div class="text">
+                <div class="title">
+                    <p>${movie.Title}</p>
+                </div>
+                <p class="year">${movie.Year} - <span class="type">${movie.Type}</span> </p>
+            </div>
+        </div>`
+    ).join('');
+}
+
+//* MODAL INFO MOVIE
+async function consultApiModal(idMovie) {
+    const response = await fetch(`//www.omdbapi.com/?i=${idMovie}&apikey=1e13fde`);
+    const resultInfo = await response.json();
+    renderResultModal(resultInfo);
+}
+
+export function openModal(e) {
+    const btnViewMore = e.target.parentElement;
+    if (btnViewMore.classList.contains('view-more')) {
+        consultApiModal(btnViewMore.getAttribute("id"));
     }
 }
 
@@ -35,7 +94,7 @@ function renderResultModal(movie) {
                         <p><span>Writers: </span>${movie.Writer}</p>
                         <p><span>About: </span> ${movie.Plot}</p>
                     </div>
-                    <button class="favourite">Add to favourite <i class="fas fa-heart"></i></button>
+                    <button class="favourite" value="${movie.imdbID}">Add to favourite <i class="fas fa-heart"></i></button>
                 </div>
             </div>
     `;
@@ -43,60 +102,22 @@ function renderResultModal(movie) {
     modal.classList.add("show");
 }
 
-async function consultApiModal(idMovie) {
-    const response = await fetch(`//www.omdbapi.com/?i=${idMovie}&apikey=1e13fde`);
-    const resultInfo = await response.json();
-    renderResultModal(resultInfo);
-}
-
-function openModal(e) {
-    const btnViewMore = e.target.parentElement;
-    if (btnViewMore.classList.contains('view-more')) {
-        consultApiModal(btnViewMore.getAttribute("id"));
+function closeModal(e) {
+    if (e.target.classList.contains('close-button') || e.target.classList.contains('close-info')) {
+        modal.classList.remove("show");
     }
 }
 
-function renderResults(results) {
-    containerMovies.innerHTML = results.map(movie =>
-        `<div class="movie">
-            <div class="img-movie">
-                <img src="${movie.Poster}" alt="">
-                <button class="view-more" id="${movie.imdbID}">
-                    <i class="fas fa-eye"></i>
-                </button>
-            </div>
-            <div class="text">
-                <div class="title">
-                    <p>${movie.Title}</p>
-                </div>
-                <p class="year">${movie.Year} - <span class="type">${movie.Type}</span> </p>
-            </div>
-        </div>`
-    ).join('');
-}
-
-function renderMessage(message, title) {
-    const divMessage = document.getElementById('message-search');
-    divMessage.innerHTML = `<p> ${message} "${title}"</p>`;
-}
-
-async function consultApi(title) {
-    const response = await fetch(`//www.omdbapi.com/?s=${title}&apikey=1e13fde`);
-    const resultsSearch = await response.json();
-    if (resultsSearch.Response === "True") {
-        renderResults(resultsSearch.Search);
-        renderMessage("These are the results of", title);
-    } else {
-        renderMessage(":( There are no results for", title);
+//* ADD MOVIE TO FAVOURITES
+function addToFavourites(e) {
+    if (e.target.classList.contains('favourite')) {
+        addToLocalstorage(e.target.getAttribute('value'));
     }
 }
 
-function chargeMovies(e) {
-    e.preventDefault();
-    const textSearch = document.getElementById('search').value;
-    consultApi(textSearch);
-}
-
+//* EVENT LISTENERS
+document.addEventListener('DOMContentLoaded', checkLocalStorage);
 btnSearch.addEventListener('click', chargeMovies);
 containerMovies.addEventListener('click', openModal);
 document.addEventListener('click', closeModal);
+document.addEventListener('click', addToFavourites);

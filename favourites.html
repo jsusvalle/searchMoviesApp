@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
     <title>Info Movies Application</title>
     <link rel="stylesheet" href="static/css/normalize.css">
     <link rel="stylesheet" href="static/css/styles.css">
@@ -11,9 +12,21 @@
 
 <body>
 
+    <header class="header">
+        <div class="logo">
+            <h1><span>Movie</span>Search</h1>
+        </div>
 
+        <div class="favs-out">
+            <a href="favourites.html" class="btn-fav"><span id="number-fav">0</span> <i class="fas fa-heart"></i></a>
+        </div>
+    </header>
 
-    <script src="static/js/main.js"></script>
+    <div class="container-movies" id="movies-container"></div>
+
+    <div class="info-modal" id="info-modal"></div>
+
+    <script src="static/js/favourites.js" type="module"></script>
     <script src="https://kit.fontawesome.com/55a889473b.js" crossorigin="anonymous"></script>
 </body>
 

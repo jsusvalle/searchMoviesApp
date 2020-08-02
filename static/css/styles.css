@@ -25,47 +25,6 @@ h1 span {
   color: #ed3355;
 }
 
-div.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 4rem;
-}
-div.container .form-login {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  border-radius: 1rem;
-}
-div.container .form-login .message-login {
-  text-align: center;
-  background-color: #6e1a29;
-  border-radius: 1rem;
-}
-div.container .form-login input,
-div.container .form-login button {
-  color: #ffffff;
-  border-radius: 1rem;
-  padding: 1rem;
-  margin: 1rem 0;
-}
-div.container .form-login input.name-user,
-div.container .form-login input.pass-user {
-  border: 2px solid #ed3355;
-  background-color: #1c22309b;
-}
-div.container .form-login .login {
-  border: none;
-  background-color: #ed3355;
-  transition: background-color 0.5s ease;
-  cursor: pointer;
-}
-div.container .form-login .login:hover {
-  background-color: #ed3355b0;
-}
-
 header.header {
   padding-top: 1.5rem;
   display: flex;
@@ -109,23 +68,6 @@ header.header .favs-out .btn-fav:hover i {
   transition: color 0.5s ease;
   color: #ed3355;
 }
-header.header .favs-out .btn-out {
-  margin-left: 5rem;
-  transition: color 0.5s ease;
-}
-@media only screen and (min-width: 768px) {
-  header.header .favs-out .btn-out {
-    margin-left: 2rem;
-  }
-}
-@media only screen and (min-width: 992px) {
-  header.header .favs-out .btn-out {
-    margin-left: 5rem;
-  }
-}
-header.header .favs-out .btn-out:hover {
-  color: #ed3355;
-}
 header.header .search-movie {
   margin-top: 2rem;
 }
@@ -138,6 +80,7 @@ header.header .search-movie form {
   display: flex;
 }
 header.header .search-movie form input {
+  width: 30rem;
   padding: 1rem;
   border: none;
   border-top-left-radius: 1rem;
@@ -252,24 +195,24 @@ div.container-movies .movie .text .year .type {
 }
 .info-modal .modal-content {
   background-color: #1c2230;
-  width: 80vw;
+  width: 90vw;
   height: auto;
   padding: 1rem;
   border-radius: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .info-modal .modal-content {
-    width: 60vw;
+    width: 70vw;
   }
 }
 @media only screen and (min-width: 992px) {
   .info-modal .modal-content {
-    width: 50vw;
+    width: 60vw;
   }
 }
 @media only screen and (min-width: 1320px) {
   .info-modal .modal-content {
-    width: 40vw;
+    width: 60vw;
   }
 }
 .info-modal .modal-content .close {
