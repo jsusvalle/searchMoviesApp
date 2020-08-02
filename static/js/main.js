@@ -91,7 +91,7 @@ async function consultApi(title) {
     }
 }
 
-function chargeMovies(e) {
+function chargeMovies() {
     const textSearch = document.getElementById('search').value;
     consultApi(textSearch);
 }
