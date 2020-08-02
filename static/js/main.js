@@ -44,7 +44,7 @@ function renderResultModal(movie) {
 }
 
 async function consultApiModal(idMovie) {
-    const response = await fetch(`http://www.omdbapi.com/?i=${idMovie}&apikey=1e13fde`);
+    const response = await fetch(`//www.omdbapi.com/?i=${idMovie}&apikey=1e13fde`);
     const resultInfo = await response.json();
     renderResultModal(resultInfo);
 }
@@ -81,7 +81,7 @@ function renderMessage(message, title) {
 }
 
 async function consultApi(title) {
-    const response = await fetch(`http://www.omdbapi.com/?s=${title}&apikey=1e13fde`);
+    const response = await fetch(`//www.omdbapi.com/?s=${title}&apikey=1e13fde`);
     const resultsSearch = await response.json();
     if (resultsSearch.Response === "True") {
         renderResults(resultsSearch.Search);
