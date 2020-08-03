@@ -1,7 +1,7 @@
 # Search info of Movies. With OMDB API :computer:.
 
 ### Link :link::
-https://naughty-jones-0b6f55.netlify.app/
+https://movie-search-app-0b6f55.netlify.app/
 
 ### **Preview** :arrow_down:
 
