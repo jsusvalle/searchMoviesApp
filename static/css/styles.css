@@ -20,13 +20,14 @@ body {
 h1 {
   text-transform: uppercase;
   font-size: 4.5rem;
+  color: #ffffff;
 }
 h1 span {
   color: #ed3355;
 }
 
 header.header {
-  padding-top: 1.5rem;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,8 +35,16 @@ header.header {
 @media only screen and (min-width: 768px) {
   header.header {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
   }
+}
+@media only screen and (min-width: 768px) {
+  header.header .logo {
+    margin-left: 4rem;
+  }
+}
+header.header .logo a {
+  text-decoration: none;
 }
 header.header .logo h1 {
   margin: 0;
@@ -58,6 +67,7 @@ header.header .favs-out {
   header.header .favs-out {
     order: 3;
     margin-top: 0;
+    margin-right: 4rem;
   }
 }
 header.header .favs-out a {
@@ -152,6 +162,7 @@ div.container-movies .movie .img-movie {
 }
 div.container-movies .movie .img-movie img {
   width: 170px;
+  max-height: 250px;
   border-radius: 1.5rem;
 }
 div.container-movies .movie .img-movie .view-more {
@@ -284,7 +295,8 @@ div.container-movies .movie .text .year .type {
 .info-modal .modal-content .info-movie .info-create-movie p span {
   font-weight: 600;
 }
-.info-modal .modal-content .info-movie .favourite {
+
+.favourite {
   background-color: transparent;
   border-radius: 1rem;
   border: 2px solid #ed3355;
@@ -294,11 +306,18 @@ div.container-movies .movie .text .year .type {
   transition: background-color 0.5s ease;
   margin-bottom: 0.5rem;
 }
-.info-modal .modal-content .info-movie .favourite:hover {
+.favourite:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.info-modal .modal-content .info-movie .favourite i {
+.favourite i {
   color: #ed3355;
+}
+
+.delete.favourite {
+  border-color: #005086;
+}
+.delete.favourite i {
+  color: #005086;
 }
 
 .info-modal.show {

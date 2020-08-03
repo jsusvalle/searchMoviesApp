@@ -15,3 +15,14 @@ export function addToLocalstorage(idMovie) {
     localS.push(idMovie);
     localStorage.setItem('moviesFavs', JSON.stringify(localS));
 }
+
+export function removeToLocalstorage(idMovie) {
+    let localS;
+    localS = checkLS();
+    localS.forEach((movie, index) => {
+        if (movie === idMovie) {
+            localS.splice(index, 1);
+        }
+    });
+    localStorage.setItem('moviesFavs', JSON.stringify(localS));
+}

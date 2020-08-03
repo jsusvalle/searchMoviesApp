@@ -87,23 +87,31 @@
                     font-weight: 600;
                 }
             }
-            .favourite {
-                background-color: transparent;
-                border-radius: 1rem;
-                border: 2px solid $primary-color;
-                padding: 1rem;
-                color: #ffffff;
-                cursor: pointer;
-                transition: background-color .5s ease;
-                margin-bottom: .5rem;
-                &:hover {
-                    background-color: rgba(#000, .5);
-                }
-                i {
-                    color: $primary-color;
-                }
-            }
         }
+    }
+}
+
+.favourite {
+    background-color: transparent;
+    border-radius: 1rem;
+    border: 2px solid $primary-color;
+    padding: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color .5s ease;
+    margin-bottom: .5rem;
+    &:hover {
+        background-color: rgba(#000, .5);
+    }
+    i {
+        color: $primary-color;
+    }
+}
+
+.delete.favourite {
+    border-color: #005086;
+    i {
+        color: #005086;
     }
 }
 

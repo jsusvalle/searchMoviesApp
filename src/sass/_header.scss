@@ -1,15 +1,23 @@
 header.header {
-    padding-top: 1.5rem;
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     @include mq-tablet {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
     }
-    .logo h1 {
-        margin: 0;
-        font-size: 4rem;
+    .logo {
+        @include mq-tablet {
+            margin-left: 4rem;
+        }
+        a {
+            text-decoration: none;
+        }
+        h1 {
+            margin: 0;
+            font-size: 4rem;
+        }
     }
     .search-movie {
         order: 3;
@@ -24,6 +32,7 @@ header.header {
         @include mq-tablet {
             order: 3;
             margin-top: 0;
+            margin-right: 4rem;
         }
         a {
             text-decoration: none;

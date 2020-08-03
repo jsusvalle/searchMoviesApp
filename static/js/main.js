@@ -65,7 +65,7 @@ async function consultApiModal(idMovie) {
     renderResultModal(resultInfo);
 }
 
-export function openModal(e) {
+function openModal(e) {
     const btnViewMore = e.target.parentElement;
     if (btnViewMore.classList.contains('view-more')) {
         consultApiModal(btnViewMore.getAttribute("id"));
@@ -112,6 +112,8 @@ function closeModal(e) {
 function addToFavourites(e) {
     if (e.target.classList.contains('favourite')) {
         addToLocalstorage(e.target.getAttribute('value'));
+        modal.classList.remove("show");
+        checkLocalStorage();
     }
 }
 
