@@ -39,7 +39,15 @@ header.header {
             color: #ffffff;
         }
         .btn-fav {
-            //display: none;
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 3rem;
+            cursor: pointer;
+            &.enable {
+                display: initial;
+            }
             &:hover i {
                 transition: color .5s ease;
                 color: $primary-color;

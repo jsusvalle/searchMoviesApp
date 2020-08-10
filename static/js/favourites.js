@@ -5,12 +5,21 @@ import { checkLS, removeToLocalstorage } from "./localStorage.js";
 const numberFav = document.getElementById('number-fav');
 const containerMovies = document.getElementById('movies-container');
 const modal = document.getElementById('info-modal');
+const btnFav = document.getElementById('btn-fav');
 
 //* FUNCTIONS 
 function checkLocalStorage() {
     let resultLS;
     resultLS = checkLS();
-    numberFav.innerText = resultLS.length;
+
+    if (resultLS.length === 0) {
+        btnFav.classList.remove('enable');
+        window.location.href = "index.html";
+    } else {
+        btnFav.classList.add('enable');
+        numberFav.innerText = resultLS.length;
+    }
+
     containerMovies.innerHTML = "";
     readToLocalStorage(resultLS);
 }

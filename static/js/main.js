@@ -6,13 +6,19 @@ const btnSearch = document.getElementById('btn-search');
 const containerMovies = document.getElementById('movies-container');
 const modal = document.getElementById('info-modal');
 const numberFav = document.getElementById('number-fav');
+const btnFav = document.getElementById('btn-fav');
 
 //* Functions
 //* CHECK THE LOCALSTORAGE
 function checkLocalStorage() {
     let resultLS;
     resultLS = checkLS();
-    numberFav.innerText = resultLS.length;
+    if (resultLS.length === 0) {
+        btnFav.classList.remove('enable');
+    } else {
+        btnFav.classList.add('enable');
+        numberFav.innerText = resultLS.length;
+    }
 }
 
 //* RESULTS OF SEARCH MOVIES
